@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container-social {
+    margin: 350px auto 100px auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  border-radius: 50%;
+  animation: wave 4s ease-in-out infinite;
+  transition: transform 0.3s ease, background-image 0.3s ease;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  top: -400px;
+  left: 50%;
+  width: 2px;
+  height: 400px;
+  background-color: #fff;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.insta {
+  background-image: url("insta.png");
+  animation-delay: 1s;
+}
+
+.x {
+  background-image: url("x.png");
+  animation-delay: 1.5s;
+}
+
+.facebook {
+  background-image: url("facebook.png");
+  background-color: white;
+  animation-delay: 2s;
+}
+
+.linkedin {
+  background-image: url("vecteezy_linkedin-png-icon_16716470.png");
+  animation-delay: 2.5s;
+}
+
+.youtube {
+  background-image: url("yt.png");
+  animation-delay: 3s;
+}
+.tiktok {
+  background-image: url("tiktok.png");
+  animation-delay: 3s;
+}
+@keyframes wave {
+  0%, 100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .icon::before {
+    top: -500px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container-social {
+    margin: 200px auto 100px auto;
+    align-items: center;
+    gap: 10px;
+  }
+  .icon {
+    height: 60px;
+    width: 60px;
+  }
+  .icon::before {
+    top: -500px;
+    height: 500px;
+  }
+}
+
+/* @media screen and (max-width: 400px) {
+  .icon {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .icon {
+    height: 40px;
+    width: 40px;
+  }
+} */
