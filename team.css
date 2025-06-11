@@ -1,0 +1,32 @@
+.role-set-container {
+    display: grid;
+    color: white;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.title-job-heading {
+    margin-left: 5vw;
+    cursor: pointer;
+    font-size: 30px !important;
+    margin-top: 55px;
+    text-align: left;
+    color: rgb(245, 197, 109);
+}
+
+.role-container {
+    margin: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.image-class img {
+    width: 200px;
+    height: 200px;
+}
+
+h4.name-employee,
+h5.job-position,
+p.education {
+    margin: 10px 0;
+}

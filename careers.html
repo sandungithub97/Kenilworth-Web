@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="basic-careers.css">
+    <link rel="stylesheet" href="https://kenilworthinternational.com/nav-bar.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JavaScript/jQuery v3.6.0.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href='boxicons@2.1.1.css' rel='stylesheet'>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Kenilworth International</title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="stylebg.css">
+    
+    <style>
+        #successPopup,
+        #errorPopup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #successPopup button,
+        #errorPopup button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- particles.js container -->
+    <div id="particles-js" style="z-index: -5;"></div>
+    <div class="count-particles">
+    </div>
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="background-effect.js"></script>
+    <div class="overlay" id="overlay"></div>
+    <div class="snowflakes">
+        <div class="snowflake">☆</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">⭐</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">☆</div>
+        <!-- <div class="snowflake">⭐</div> -->
+        <div class="snowflake">☆</div>
+        <div class="snowflake">☆</div>
+    </div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="menu--left" role="navigation">
+        <div class="rightbar">
+            <div class="logo-image">
+    <img src="https://kenilworthinternational.com/Images/ken.png" alt="" class="image-logo-top" onclick="window.location.href='https://kenilworthinternational.com/'">
+</div>
+
+
+            <div class="reach-us-forum">
+                <button onclick="window.location.href='tel:0716172737'">
+                    <i class="fas fa-comment"></i> Reach Us <i class="fas fa-comment"></i>
+                </button>
+            </div>
+        </div>
+        <div class="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul class="menuItem">
+                <li onclick="window.location.href='https://kenilworthinternational.com/index.html'" class="main-list">Home</li>
+                <li class="main-list">Products</li>
+                <ul>
+                    <li class="sub-list" onclick="window.location.href='https://solutions.kenilworthinternational.com/'">Digital Transformation Solutions</li>
+                    <li class="sub-list" onclick="window.location.href='https://agro.kenilworthinternational.com/'">Agro-Tech Solutions</li>
+                    <li class="sub-list" onclick="window.location.href='https://drones.kenilworthinternational.com/'">Drone Technology</li>
+                    <li class="sub-list" onclick="window.location.href='https://services.kenilworthinternational.com/'">Secure Business Solutions</li>
+                </ul>
+                <li onclick="window.location.href='https://kenilworthinternational.com/careers.html'" class="main-list">Team</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/careers.html'" class="main-list selected">Careers</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/about-us.html'" class="main-list">About</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/contact-us.html'" class="main-list">Contact Us</li>
+                <li onclick="window.location.href='https://news.kenilworthinternational.com/'" class="main-list">News</li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div id="popupForm" style="display: none;">
+        <h2>Apply Now</h2>
+        <!-- Your form fields here -->
+        <form>
+            <!-- Form fields go here -->
+        </form>
+    </div>
+
+    <div class="env-container">
+        <img src="Images/cr.png" alt="" class="img-env">
+        <div class="we-are-box">
+            <div class="what-we">
+                <div class="env-right-block">
+                    <h1 class="what-we-offer">What We Offer</h1>
+                    <span>Discover boundless opportunities to lead innovation, foster creativity, and cultivate your
+                        expertise within a dynamic ecosystem designed to propel your career forward.</span>
+                </div>
+                <div class="env-right-block">
+                    <h1>What We Want</h1>
+                    <span>We're seeking visionary individuals driven by curiosity, armed with problem-solving prowess,
+                        and fueled by a collaborative spirit to join us in shaping the future of technology.</span>
+                </div>
+            </div>
+            <div class="join">
+                <h2>Embark on a New Adventure! <span style="color: red;"> <br>Why Wait? Join Our Innovative Team and <br
+                            class="br-class">
+                        Shape the Future Together!</span> </h2>
+                <button class="button-join" onclick="scrollToProductContainer()">Join Us</button>
+            </div>
+        </div>
+    </div>
+    <hr class="hr2">
+
+    <div class="process-container">
+        <div class="process-heading-text">
+            <h4>Interview Process</h4>
+        </div>
+        <div class="process-set">
+            <div class="process-block">
+                <img src="Images/list.png" alt="" class="process-img">
+                <div class="process-text">Short Listed</div>
+                <div class="process-desc">You've been shortlisted for our selection process. Get ready to embark on an
+                    exciting journey of potential opportunities.</div>
+            </div>
+            <img src="Images/right-arrow.png" alt="" class="right-arrow">
+            <div class="process-block">
+                <img src="Images/interview.png" alt="" class="process-img">
+                <div class="process-text">HR Interview</div>
+                <div class="process-desc">Prepare for a discussion with our HR team to showcase your skills and explore
+                    career possibilities within our organization.</div>
+            </div>
+            <img src="Images/right-arrow.png" alt="" class="right-arrow">
+            <div class="process-block">
+                <img src="Images/technical.png" alt="" class="process-img">
+                <div class="process-text">Technical Test</div>
+                <div class="process-desc">Test your technical prowess through our comprehensive assessment,
+                    demonstrating your expertise in software development and IT services.</div>
+            </div>
+            <img src="Images/right-arrow.png" alt="" class="right-arrow">
+            <div class="process-block">
+                <img src="Images/offer.png" alt="" class="process-img">
+                <div class="process-text">Offer</div>
+                <div class="process-desc">Great news! You've received an offer to join our esteemed team. Welcome aboard
+                    to Kenilworth International, where innovation thrives!</div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div id="popupCV" class="popupCV" style="display: none;">
+        <div class="closs">
+            <span class="service-select" onclick="closePopupCV()">Apply Your Job</span>
+            <span class="close-button" onclick="closePopupCV()">X</span>
+        </div>
+        <div class="contact-form">
+            <h3>Fill Below Lines</h3>
+            <form id="emailForm" action="send_email.php" method="post" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required autocomplete="organization-title">
+
+                <label for="cv">CV (PDF):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf" required class="cv">
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required autocomplete="tel">
+                <div style="display:none;">
+                    <label for="honeypot">Honeypot:</label>
+                    <input type="text" id="honeypot" name="honeypot">
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LdgNQUqAAAAAOqC1stT2gz2u4ZlMCNZbAxydRvJ"></div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr class="hr2" id="position-head">
+
+    <div class="posi-head">
+        <h1 class="careersLatest">Available Positions</h1>
+    </div>
+    <!-- <div class="special-note-career" style="text-align: center;">At this moment no any open vacancies, but if you think you are
+        a perfect fit for us, <br> just mail your resume to reachus@kenilworthinternational.com </div> -->
+
+    <div class="career-container" id="career-container">
+
+        <div class="career-card">
+            <div class="career-info">
+                <h2 class="career-title">Drone Pilot</h2>
+                <p class="career-description" style="text-align: justify;">Join our team as a drone pilot! We are
+                    looking for disciplined, healthy individuals aged 18-25 with a positive attitude and who have passed
+                    O/L exams with at least a 'C' in
+                    English and Maths.
+                </p>
+                <div class="special-note-career"></div>
+                <button class="button-join" onclick="window.location.href='career01.html'">More Info</button>
+            </div>
+        </div>
+        <div class="career-card">
+
+            <div class="career-info">
+                <h2 class="career-title">Quality Assurance (QA) engineer</h2>
+                <p class="career-description" style="text-align: justify;">We are looking for a QA Engineer to join our
+                    skilled team. You will work closely in an agile environment, In this role, you will work closely in
+                    an agile environment with the Development team as well as our Design, Marketing, and Business
+                    Development teams.
+                <div class="special-note-career"></div>
+                <button class="button-join" onclick="window.location.href='career03.html'">More Info</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="career-container" id="career-container">
+        <div class="career-card">
+            <div class="career-info">
+                <h2 class="career-title">Head of Sales</h2>
+                <p class="career-description" style="text-align: justify;">We are seeking an experienced and dynamic
+                    Head of Sales and Marketing to lead our efforts in driving growth and brand awareness at Kenilworth
+                    International. This role is pivotal in shaping and executing our sales and marketing strategies to
+                    achieve our ambitious goals.
+                </p>
+                <div class="special-note-career"></div><br>
+                <button class="button-join" onclick="window.location.href='career02.html'">More Info</button>
+            </div>
+        </div>
+    </div>
+
+    <hr class="hr2">
+
+    <div class="internship-container">
+        <div>
+            <h1 class="heading1">Internship at Kenilworth</h1>
+            <br>
+            <span class="text1">Unlock your potential in software development and IT services with Kenilworth
+                International's dynamic Internship Program. Join a collaborative environment where innovation thrives
+                and challenges
+                fuel growth. Step into the future of tech with Kenilworth International. </span>
+            <br>
+
+            <h3 class="heading3">Available Internships</h3>
+            <div class="special-note-career" style="text-align: center;">At this moment no any open vacancies, but if
+                you think you are
+                a perfect fit for us, <br> just mail your resume to reachus@kenilworthinternational.com
+            </div>
+
+            <!-- <div class="intern-list">
+                <button class="intern" onclick="popupCVIntern(event)">Intern Software Engineer - Flutter</button>
+                <button class="intern" onclick="popupCVIntern(event)">Intern Graphic Designer</button>
+            </div> -->
+
+        </div>
+    </div>
+    <!-- <div class="stay-with-us">
+        <label class="email-input">Stay With Us,</label>
+        <textarea id="email-input" class="email-area" name="email-area" cols="30" rows="1" aria-label="Email"
+            aria-labelledby="email-label" placeholder="Enter your email address"></textarea>
+        <button class="button" type="submit">Subscribe</button>
+    </div> -->
+
+    <!--################################################ Footer ############################################################-->
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="Images/logoRemovebg.png" alt="Company Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>
+                        Home
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/products.html">Product</a></li>
+                            <li><a href="https://kenilworthinternational.com/">Growth</a></li>
+                        </ul>
+                    </li>
+                    <li>Products and Services
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://services.kenilworthinternational.com">Secure Cards</a></li>
+                            <li><a href="https://solutions.kenilworthinternational.com">Software Solution</a></li>
+                            <li><a href="http://agro.kenilworthinernational.com">Digitalized Agro Tech Solution</a></li>
+                            <li><a href="https://drones.kenilworthinternational.com">UAV, Drones & Jammers</a></li>
+                        </ul>
+                    </li>
+                    <li>Company
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/about-us.html">About Us</a></li>
+                        </ul>
+                    </li>
+                    <li>Contact Us
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/contact-us.html">REACH US</a></li>
+                        </ul>
+                    </li>
+                    <li>CAREERS
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/careers.html">Careers</a></li>
+                            <li><a href="https://kenilworthinternational.com/careers.html">Internships</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/KenilworthInternationalLanka" target="_blank"><img
+                    src="Images/facebook-icon.png" class="social-logo-image" alt="Facebook"></a>
+            <a href="https://www.youtube.com/@KenilworthInternational" target="_blank"><img src="Images/yt.png"
+                    class="social-logo-image" alt="Twitter"></a>
+            <a href="https://twitter.com/kenilworth_int" target="_blank"><img src="Images/twitter-icon.png"
+                    class="social-logo-image" alt="Twitter"></a>
+            <a href="https://www.instagram.com/kenilworth_international" target="_blank"><img src="Images/insta.png"
+                    class="social-logo-image" alt="Twitter"></a>
+
+            <a href="https://www.linkedin.com/company/kenilworth-international/" target="_blank"><img
+                    src="Images/linkedin-icon.png" class="social-logo-image" alt="LinkedIn"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.kenilworth.croplapmc&pcampaignid=web_share"
+                target="_blank"><img src="Images/playstore-ncms.png" class="social-logo-image" alt="NCMS"></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KENILWORTH International. All rights reserved.</p>
+        </div>
+    </footer>
+    <div id="successPopup">
+        <p id="successMessage"></p>
+        <button onclick="closeSuccessPopup()">Done</button>
+    </div>
+
+    <div id="errorPopup">
+        <p id="errorMessage"></p>
+        <button onclick="closeErrorPopup()">Close</button>
+    </div>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.dropbtn').forEach(function (dropdownButton) {
+                dropdownButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    this.nextElementSibling.classList.toggle('show');
+                });
+            });
+
+            // Close the dropdown menu if the user clicks outside of it
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function (dropdownContent) {
+                        if (dropdownContent.classList.contains('show')) {
+                            dropdownContent.classList.remove('show');
+                        }
+                    });
+                }
+            });
+        });
+        const body = document.querySelector("body");
+        const nav = document.querySelector("nav");
+        const sidebarOpen = document.querySelector(".sidebarOpen");
+        const sidebarClose = document.querySelector(".sidebarClose");
+
+        sidebarOpen.addEventListener("click", () => {
+            nav.classList.add("active");
+        });
+
+        body.addEventListener("click", e => {
+            let clickedElm = e.target;
+            if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
+                nav.classList.remove("active");
+            }
+        });
+
+        const navBar = document.querySelector(".nav-bar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 0) {
+                navBar.classList.add("scrolled");
+            } else {
+                navBar.classList.remove("scrolled");
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function scrollToProductContainer() {
+            document.getElementById('position-head').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function popupCV(position) {
+            document.getElementById('position').value = position;
+            document.getElementById('popupCV').style.display = 'block';
+        }
+
+        function closePopupCV() {
+            document.getElementById('popupCV').style.display = 'none';
+            resetForm();
+        }
+
+        function closeSuccessPopup() {
+            document.getElementById('successPopup').style.display = 'none';
+            document.getElementById('popupCV').style.display = 'none';
+            resetForm();
+        }
+
+        function closeErrorPopup() {
+            document.getElementById('errorPopup').style.display = 'none';
+            resetForm();
+        }
+        function resetForm() {
+            document.getElementById('emailForm').reset();
+            grecaptcha.reset();
+        }
+        // Handle form submission
+        document.getElementById('emailForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+
+            // Show loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+
+            fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading spinner
+                    document.getElementById('loadingSpinner').style.display = 'none';
+
+                    if (data.status === 'success') {
+                        document.getElementById('successMessage').textContent = data.message;
+                        document.getElementById('successPopup').style.display = 'block';
+                        resetForm();
+
+                    } else {
+                        document.getElementById('errorMessage').textContent = data.message;
+                        document.getElementById('errorPopup').style.display = 'block';
+                        resetForm();
+                    }
+                })
+                .catch(error => {
+                    // Hide loading spinner
+                    document.getElementById('loadingSpinner').style.display = 'none';
+
+                    document.getElementById('errorMessage').textContent = 'An error occurred while sending the email.';
+                    document.getElementById('errorPopup').style.display = 'block';
+                    resetForm();
+                });
+        });
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+}
+
+/* ===== Colors ===== */
+:root {
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+body {
+    width: 100vw;
+    background-color: white;
+}
+.social{
+    margin-top: 20px;
+    text-align: center;
+    margin-right: 40px;
+}
+.set1 {
+    height: 80%;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.set1 .spc1 {
+    width: 50vw;
+    text-align: left;
+    flex: 1;
+    height: 100%;
+    margin-top: 100px;
+}
+.link{
+    color: white;
+}
+.set1 .spc2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    text-align: left;
+    color: white;
+    
+}.set1 .spc2 span, .set1 .spc2 h2{
+    margin-left: 200px;
+}
+.set1 .spc2 span{
+    margin-bottom: 10px;
+}
+.set1 .spc2 h2{
+    margin-bottom: 15px;
+}
+.btn-div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+.buttonv2 {
+    text-decoration: none;
+    background-color: #e44d26;
+    color: rgb(255, 255, 255);
+    border: none;
+    width: 20%;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 2.0s;
+}
+.hrs {
+    margin-top: 150px;
+    height: 2px;
+    border: none;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    width: 94%;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
+.cs{
+    margin-top: 100px;
+}
+.map-cot{
+    height: 400px;
+    width: 50vw;
+    margin-bottom: 100px;
+    margin-left: 40px;
+}
+.map{
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 400px) {
+    .nav-main {
+        opacity: 1 !important;
+    }
+    .textarea {
+        height: 100px; 
+        resize: vertical; /* Allow vertical resizing */
+        overflow-y: auto; /* Add a scrollbar if content exceeds the height */
+    }
+    .set1 {
+        margin-bottom: 150px;
+        flex-direction: column;
+        height: 100%; /* add this line */
+    }
+    .spc1 {
+        margin-top: 100px !important;
+        width: 100vw !important;
+        height: 100% !important;
+        flex: 1;
+        padding: 0 !important;
+        margin-bottom: 10px;
+    }
+    .cs{
+        margin-top: 0;
+    }
+    .spc2 {
+        flex: 3;
+        padding-bottom: 20px !important;
+        width: 100vw;
+        height: 150%;
+        margin-top: 0;
+    }
+    .social{
+        width: 100vw;
+        text-align: center;
+    }
+    .map{
+        margin-top: 10px !important;
+        height: 40vh !important;
+        width: 80vw;
+        padding: 0 !important;
+    }
+    .map-cot{
+        padding: 0 !important;
+        height: 40vh !important;
+        width: 80vw !important;
+        margin-left: 10% !important;
+        margin-top: 10px;
+        text-align: center !important;
+    margin-bottom: 10px !important;}
+    .set1 .spc2 span, .set1 .spc2 h2{
+        margin-left: 10% !important;
+    }
+    .btn-div{
+        
+        margin-left: 20%;
+    }
+    .hrs {
+        margin-top: 20px;
+    }
+}
+@media (min-width: 400px) and (max-width: 600px) {
+    .nav-main {
+        opacity: 1 !important;
+    }
+    .textarea {
+        height: 100px; 
+        resize: vertical; /* Allow vertical resizing */
+        overflow-y: auto; /* Add a scrollbar if content exceeds the height */
+    }
+    .set1 {
+        margin-bottom: 150px;
+        flex-direction: column;
+        height: 100%; /* add this line */
+    }
+    .spc1 {
+        margin-top: 50px !important;
+        width: 100vw !important;
+        height: 100% !important;
+        flex: 1;
+        padding: 0 !important;
+        margin-bottom: 10px;
+    }
+    .cs{
+        margin-top: 0;
+    }
+    .spc2 {
+        flex: 3;
+        padding-bottom: 20px !important;
+        width: 100vw;
+        height: 150%;
+        margin-top: 0;
+    }
+    .social{
+        width: 100vw;
+        text-align: center;
+    }
+    .map{
+        margin-top: 10px !important;
+        height: 40vh !important;
+        width: 80vw;
+        padding: 0 !important;
+    }
+    .map-cot{
+        padding: 0 !important;
+        height: 40vh !important;
+        width: 30vw !important;
+        margin-left: 10% !important;
+        margin-top: 10px;
+        text-align: center !important;
+    margin-bottom: 10px !important;
+    }
+
+    .set1 .spc2 span, .set1 .spc2 h2{
+        margin-left: 10% !important;
+    }
+    .btn-div{
+        margin-left: 20%;
+    }
+    .hrs {
+        margin-top: 20px;
+    }
+}
+@media (min-width: 600px) and (max-width: 800px) {
+    .nav-main {
+        opacity: 1 !important;
+    }
+    .set1 {
+        flex-direction: column;
+        height: 100%; /* add this line */
+    }
+    .set1 .spc1 {
+        width: 100vw !important;
+        padding-bottom: 155px;
+        height: 100%;
+    }
+    
+    .set1 .spc2 {
+        padding-bottom: 155px;
+        width: 100vw;
+        height: 150%;
+        margin-top: 30px;
+    }
+    .map{
+        margin-top: 130px;
+        height: 100%;
+        width: 100%;
+    }
+    .map-cot{
+        height: 300px;
+        width: 100vw;
+    margin-bottom: 200px;}
+    .set1 .spc2 span, .set1 .spc2 h2{
+        margin-left: 20%;
+    }
+    .btn-div{
+        
+        margin-left: 20%;
+    }
+    .hrs {
+        margin-top: 20px;
+    }
+}

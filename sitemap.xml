@@ -1,0 +1,67 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main domain pages -->
+    <url>
+        <loc>https://kenilworthinternational.com/</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://kenilworthinternational.com/index.html</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://kenilworthinternational.com/careers.html</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://kenilworthinternational.com/about-us.html</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.8</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://kenilworthinternational.com/contact-us.html</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.8</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <!-- Subdomains for specific solutions -->
+    <url>
+        <loc>https://solutions.kenilworthinternational.com/</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://agro.kenilworthinternational.com/</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://drones.kenilworthinternational.com/</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://services.kenilworthinternational.com/</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <!-- News subdomain -->
+    <url>
+        <loc>https://news.kenilworthinternational.com/</loc>
+        <lastmod>2024-09-05</lastmod>
+        <priority>0.7</priority>
+        <changefreq>daily</changefreq>
+    </url>
+</urlset>

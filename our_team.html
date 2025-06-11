@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="star.css">
+    <link rel="stylesheet" href="basic.css">
+    <script src="JavaScript/jQuery v3.6.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="stylebg.css">
+    <title>Our Team</title>
+    <link rel="stylesheet" href="team.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <!-- particles.js container -->
+    <div id="particles-js" style="z-index: -5;"></div>
+    <div class="count-particles"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="background-effect.js"></script>
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="menu--left" role="navigation">
+        <div class="rightbar">
+            <div class="logo-image">
+    <img src="https://kenilworthinternational.com/Images/ken.png" alt="" class="image-logo-top" onclick="window.location.href='https://kenilworthinternational.com/'">
+</div>
+
+
+            <div class="reach-us-forum">
+                <button onclick="window.location.href='tel:0716172737'">
+                    <i class="fas fa-comment"></i> Reach Us <i class="fas fa-comment"></i>
+                </button>
+            </div>
+        </div>
+        <div class="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul class="menuItem">
+                <li onclick="window.location.href='https://kenilworthinternational.com/index.html'" class="main-list selected">Home</li>
+                <li class="main-list">Products</li>
+                <ul>
+                    <li class="sub-list" onclick="window.location.href='https://solutions.kenilworthinternational.com/'">Digital Transformation Solutions</li>
+                    <li class="sub-list" onclick="window.location.href='https://agro.kenilworthinternational.com/'">Agro-Tech Solutions</li>
+                    <li class="sub-list" onclick="window.location.href='https://drones.kenilworthinternational.com/'">Drone Technology</li>
+                    <li class="sub-list" onclick="window.location.href='https://services.kenilworthinternational.com/'">Secure Business Solutions</li>
+                </ul>
+                <li onclick="window.location.href='https://kenilworthinternational.com/careers.html'" class="main-list">Team</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/careers.html'" class="main-list">Careers</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/about-us.html'" class="main-list">About</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/contact-us.html'" class="main-list">Contact Us</li>
+                <li onclick="window.location.href='http://news.kenilworthinternational.com/'" class="main-list">News</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="snowflakes">
+        <div class="snowflake">☆</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">🔯</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">🔯</div>
+    </div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+
+    <div class="wing-container">
+        <h1 class="title-job-heading" onclick="toggleWing('corporate-wing')">CORPORATE WING <i class="fas fa-chevron-down"></i></h1>
+        <div class="role-set-container corporate-wing" style="display: grid;">
+
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Prof. Jerry Jayawaradena</h4>
+                <h5 class="job-position">CEO</h5>
+                <p class="education">B Sce (hons) IT</p>
+            </div>
+
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Kavinda Dissanayake</h4>
+                <h5 class="job-position">Managing Director</h5>
+                <p class="education"></p>
+            </div>
+            
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">User</h4>
+                <h5 class="job-position">Director</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wing-container">
+        <h1 class="title-job-heading" onclick="toggleWing('ict-wing')">ICT WING <i class="fas fa-chevron-right"></i></h1>
+        <div class="role-set-container ict-wing" style="display: none;">
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Anoj De Silva</h4>
+                <h5 class="job-position">Managing Director</h5>
+                <p class="education"></p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/deshika1.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Deshika Senevirathne</h4>
+                <h5 class="job-position">Team Lead</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Amila Chathuranga</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Sandun Madhubhashana</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/shahiru.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Shahiru Edirisinghe</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Ridma Chamuditha</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wing-container">
+        <h1 class="title-job-heading" onclick="toggleWing('drone-wing')">DRONE WING <i class="fas fa-chevron-right"></i></h1>
+        <div class="role-set-container drone-wing" style="display: none;">
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/lal-wijethunga.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Lal Wijethunga - RWP RSP VSV USP</h4>
+                <h5 class="job-position">Director Operation - Drone Wing</h5>
+                <p class="education">Major General(Retd)</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee"></h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Anoj De Silva</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/deshika.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Deshika Senevirathne</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Sandun Madhubhashana</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wing-container">
+        <h1 class="title-job-heading" onclick="toggleWing('finance-wing')">FINANCE WING <i class="fas fa-chevron-right"></i></h1>
+        <div class="role-set-container finance-wing" style="display: none;">
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Buddhika</h4>
+                <h5 class="job-position">Managing Director</h5>
+                <p class="education"></p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Gayanthika</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Sandunika</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <!-- <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/deshika.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Deshika Senevirathne</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div>
+            <div class="role-container">
+                <div class="image-class">
+                    <img src="Images/pro-pic.jpg" alt="dp">
+                </div>
+                <h4 class="name-employee">Sandun Madhubhashana</h4>
+                <h5 class="job-position">Software Engineer</h5>
+                <p class="education">B Sc (hons) IT</p>
+            </div> -->
+        </div>
+    </div>
+
+    <footer class="footer-class">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="Images/logoRemovebg.png" alt="Company Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>
+                        Home
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/products.html">Product</a></li>
+                            <li><a href="https://kenilworthinternational.com/">Growth</a></li>
+                        </ul>
+                    </li>
+                    <li>Products and Services
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://services.kenilworthinternational.com">Secure Cards</a></li>
+                            <li><a href="https://solutions.kenilworthinternational.com">Software Solution</a></li>
+                            <li><a href="http://agro.kenilworthinernational.com">Digitalized Agro Tech Solution</a></li>
+                            <li><a href="https://drones.kenilworthinternational.com">UAV, Drones & Jammers</a></li>
+                        </ul>
+                    </li>
+                    <li>Company
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/about-us.html">About Us</a></li>
+                        </ul>
+                    </li>
+                    <li>Contact Us
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/contact-us.html">REACH US</a></li>
+                        </ul>
+                    </li>
+                    <li>CAREERS
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/careers.html">Careers</a></li>
+                            <li><a href="https://kenilworthinternational.com/careers.html">Internships</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/KenilworthInternationalLanka" target="_blank"><img src="Images/facebook-icon.png" class="social-logo-image" alt="Facebook"></a>
+            <a href="https://www.youtube.com/@KenilworthInternational" target="_blank"><img src="Images/yt.png" class="social-logo-image" alt="YouTube"></a>
+            <a href="https://twitter.com/kenilworth_int" target="_blank"><img src="Images/twitter-icon.png" class="social-logo-image" alt="Twitter"></a>
+            <a href="https://www.instagram.com/kenilworth_international" target="_blank"><img src="Images/insta.png" class="social-logo-image" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/company/kenilworth-international/" target="_blank"><img src="Images/linkedin-icon.png" class="social-logo-image" alt="LinkedIn"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.kenilworth.croplapmc&pcampaignid=web_share" target="_blank"><img src="Images/playstore-ncms.png" class="social-logo-image" alt="Google Play"></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KENILWORTH International. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        
+document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.dropbtn').forEach(function (dropdownButton) {
+                dropdownButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    this.nextElementSibling.classList.toggle('show');
+                });
+            });
+
+            // Close the dropdown menu if the user clicks outside of it
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function (dropdownContent) {
+                        if (dropdownContent.classList.contains('show')) {
+                            dropdownContent.classList.remove('show');
+                        }
+                    });
+                }
+            });
+        });
+
+        function toggleWing(wingClass) {
+            const wing = document.querySelector(`.${wingClass}`);
+            const icon = document.querySelector(`h1[onclick="toggleWing('${wingClass}')"] .fas`);
+
+            if (wing.style.display === 'none' || wing.style.display === '') {
+                wing.style.display = 'grid';
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                wing.style.display = 'none';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-right');
+            }
+        }
+    </script>
+</body>
+
+</html>

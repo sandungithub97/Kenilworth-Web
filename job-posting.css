@@ -1,0 +1,54 @@
+body {
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Changed to flex-start to ensure content is visible from the top */
+    height: max-content;
+    margin: 0;
+    padding: 20px 0; /* Add some padding to ensure the content isn't flush against the top */
+}
+
+.job-posting {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+.section1, .section2, .section3{
+    max-width: 75vw;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+.job-frame {
+    border: 5px solid #3498db;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.job-frame h1, 
+.job-frame h2, 
+.job-frame h3, 
+.job-frame h4 {
+    margin: 10px 0;
+    color: #3498db;
+}
+
+.job-frame p {
+    line-height: 1.6;
+}
+
+.job-frame ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.job-frame ul li {
+    margin-bottom: 10px;
+}

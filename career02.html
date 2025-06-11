@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="star.css">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="basic-careers.css">
+    <script src="JavaScript/jQuery v3.6.0.js"></script>
+    <link rel="stylesheet" href="https://kenilworthinternational.com/nav-bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="stylebg.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Job Posting - Head of Sales</title>
+    <link rel="stylesheet" href="career01.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        /* Scroll to Top button styling */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #555;
+        }
+        /* Popup styling */
+        #successPopup,
+        #errorPopup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #successPopup button,
+        #errorPopup button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body style="padding: 0;">
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <!-- particles.js container -->
+    <div id="particles-js" style="z-index: -5;"></div>
+    <div class="count-particles">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="background-effect.js"></script>
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="menu--left" role="navigation">
+        <div class="rightbar">
+            <div class="logo-image">
+    <img src="https://kenilworthinternational.com/Images/ken.png" alt="" class="image-logo-top" onclick="window.location.href='https://kenilworthinternational.com/'">
+</div>
+
+
+            <div class="reach-us-forum">
+                <button onclick="window.location.href='tel:0716172737'">
+                    <i class="fas fa-comment"></i> Reach Us <i class="fas fa-comment"></i>
+                </button>
+            </div>
+        </div>
+        <div class="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul class="menuItem">
+                <li onclick="window.location.href='https://kenilworthinternational.com/index.html'" class="main-list">Home</li>
+                <li class="main-list">Products</li>
+                <ul>
+                    <li class="sub-list" onclick="window.location.href='https://solutions.kenilworthinternational.com/'">Digital Transformation Solutions</li>
+                    <li class="sub-list" onclick="window.location.href='https://agro.kenilworthinternational.com/'">Agro-Tech Solutions</li>
+                    <li class="sub-list" onclick="window.location.href='https://drones.kenilworthinternational.com/'">Drone Technology</li>
+                    <li class="sub-list" onclick="window.location.href='https://services.kenilworthinternational.com/'">Secure Business Solutions</li>
+                </ul>
+                <li onclick="window.location.href='https://kenilworthinternational.com/careers.html'" class="main-list">Team</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/careers.html'" class="main-list selected">Careers</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/about-us.html'" class="main-list">About</li>
+                <li onclick="window.location.href='https://kenilworthinternational.com/contact-us.html'" class="main-list">Contact Us</li>
+                <li onclick="window.location.href='http://news.kenilworthinternational.com/'" class="main-list">News</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="snowflakes">
+        <div class="snowflake">☆</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">🔯</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">☆</div>
+        <div class="snowflake">🔯</div>
+
+    </div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+
+    <div id="popupForm" style="display: none;">
+        <h2>Apply Now</h2>
+        <!-- Your form fields here -->
+        <form>
+            <!-- Form fields go here -->
+        </form>
+    </div>
+    <div id="successPopup">
+        <p id="successMessage"></p>
+        <button onclick="closeSuccessPopup()">Done</button>
+    </div>
+
+    <div id="errorPopup">
+        <p id="errorMessage"></p>
+        <button onclick="closeErrorPopup()">Close</button>
+    </div>
+    <div id="popupCV" class="popupCV" style="display: none;">
+        <div class="closs">
+            <span class="service-select" onclick="closePopupCV()">Apply Your Job</span>
+            <span class="close-button" onclick="closePopupCV()">X</span>
+        </div>
+        <div class="contact-form">
+            <h3>Fill Below Lines</h3>
+            <form id="emailForm" action="send_email.php" method="post" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required autocomplete="organization-title">
+
+                <label for="cv">CV (PDF):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf" required class="cv">
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required autocomplete="tel">
+                <div style="display:none;">
+                    <label for="honeypot">Honeypot:</label>
+                    <input type="text" id="honeypot" name="honeypot">
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LdgNQUqAAAAAOqC1stT2gz2u4ZlMCNZbAxydRvJ"></div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Scroll to Top button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Top</button>
+
+    <!-- <div class="section1">
+        <div class="job-posting">
+            <div class="job-frame">
+                <h1>Drone Pilot</h1>
+                <button class="button-join button-apply" onclick="popupCV('Drone Pilot')">Apply Now</button>
+
+                <h3>Full-time</h3>
+                <h4>Sri Lanka</h4>
+
+                <p><strong>Whom we’re looking for</strong></p>
+                <p>Join our team as a drone pilot! We are looking for disciplined, healthy young individuals with positive attitudes. If you are passionate about drone technology and eager to work in a dynamic environment, this role is perfect for you!</p>
+                <p><strong>Tech Skills:</strong></p>
+                <ul>
+                    <li>Ordinary Level English and Maths with C passes (Minimum)</li>
+                    <li>Ordinary Level Science, one Technological subject, or Agriculture with S passes (Minimum)</li>
+                    <li>Advanced Level qualification is an advantage</li>
+                    <li>Agro Tech Dissemination Center Course certificate is an advantage</li>
+                </ul>
+                <p><strong>Non-Tech Skills:</strong></p>
+                <ul>
+                    <li>Strong communication skills</li>
+                    <li>Fast and reliable decision-making abilities</li>
+                    <li>Problem-solving skills</li>
+                    <li>Ability to adapt to different working environments</li>
+                    <li>Attention to detail</li>
+                </ul>
+                <p><strong>Important</strong></p>
+                <p>You will be required to join a course at Sir John Kotalawala Defence College - Southern. Upon completing the course, you will need to work with us for a minimum of 5 years under an agreement. This commitment ensures that you gain valuable experience and contribute significantly to our team.</p>
+            </div>
+        </div>
+    </div> -->
+
+  <div class="section2">
+        <div class="job-posting">
+            <div class="job-frame">
+                <h1>Head of Sales</h1>
+                <button class="button-join button-apply" onclick="popupCV('Head of Sales')">Apply Now</button>
+                <h3>Full-time</h3>
+                <h4>Colombo, Sri Lanka</h4>
+                
+                <p><strong>Whom we’re looking for</strong></p>
+                <p>We are seeking a visionary Head of Sales and
+                    Marketing to steer our dynamic team towards unprecedented growth and success.
+                    With a proven track record in devising and executing business development
+                    strategies, you will lead the charge in expanding our market presence and
+                    driving revenue generation.</p>
+                <p><strong>Tech skills:</strong></p>
+                <ul>
+                    <li> Professional Qualification in Sales or Marketing (CIM/SLIM or equivalent)</li>
+                    <li> Minimum 3  years’ experience as a sales professional in a transportation or project logistics company with a 1 years’ experience at a managerial level</li>
+                    <li> Masters/Degree in Sales & Marketing or Business Management</li>
+                    <li> Should be innovative, dynamic, and able to work on tight deadlines around the clock where your creativity will be challenged</li>
+                    <li> Should possess strong interpersonal skills and have an analytical mindset</li>
+                    <li> Possess extensive knowledge of sales principles and practices, and an ability to coach others on them</li>
+                    <li> Strong analytical and quantitative skills; ability to use hard data and metrics to back up assumptions, recommendations, and drive actions.</li>
+                    <li> Proven ability to influence cross-functional teams</li>
+                </ul>
+                <!-- <p><strong>Non-Tech Skills:</strong></p>
+                <ul>
+                    <li> Strength in problem solving, issue-resolution, ability to work in a deadline-driven work environment, attention to detail, and ability to multitask</li>
+                    <li> Ability to work with other team members and collaborate</li>
+                    <li> Familiarity with working in a Scrum Agile delivery environment.</li>
+                    <li> Strong leadership and team building skills</li>
+                    <li> Should have excellent problem-solving abilities</li>
+                    <li> Ability to complete given tasks fast with quality code and best practices</li>
+                </ul> -->
+                <p><strong>Other Skills:</strong></p>
+                <ul>
+                    <li>Communication skills</li>
+                    <li>Ability to communicate in English</li>
+                    <li>Problem-solving skills</li>
+                    <li>Ability to adapt to different working environments</li>
+                    <li>Attention to detail</li>
+                    <li>Open to having fun always :)</li>
+                </ul>
+               </div>
+        </div>
+    </div>
+
+   <!--    <div class="section3">
+        <div class="job-posting">
+            <div class="job-frame">
+                <h1>Quality Assurance (QA) Engineer</h1>
+                <h3>Full-time</h3>
+                <h4>Colombo, Sri Lanka</h4>
+                <button class="button-join button-apply" onclick="popupCV('Drone Pilot')">Apply Now</button>
+
+              
+                <p><strong>Whom we’re looking for</strong></p>
+                <p>Our team is looking for a talented Associate Software Engineer who has a passion to develop amazing tech products using the MERN stack for our clients. If you are someone who loves working in a flexible work environment with a team that is as tech-savvy and driven as you are, this is the perfect job for you!</p>
+                <p><strong>Tech skills:</strong></p>
+                <ul>
+                    <li> Degree in Software Engineering/Computer Science or equivalent qualification.</li>
+                    <li>Strong knowledge of software QA methodologies, tools and processes.</li>
+                    <li>Experience writing unit tests and integration tests for frontend and backend applications.</li>
+                    <li> You must possess a good eye for design.</li>
+                    <li> Basic Coding Knowledge (Flutter)</li>
+                    <li>Knowledge of agile principles/scrum ceremonies.</li>
+                    <li>Hands-on experience with automated testing tools such as Selenium and Puppeteer.</li>
+                    <li> Hands-on experience with testing frameworks such as Jest and Mocha.</li>
+                    <li>Excellent time management skills and ability to coordinate with the internal team to meet deadlines.</li>
+                    <li> Minimum 3 years’ experience as a Quality Assurance (QA) Engineer</li>
+                </ul>
+                <p><strong>Non-Tech Skills:</strong></p>
+                <ul>
+                    <li>Excellent technical, diagnostic and troubleshooting skills.</li>
+                    <li>Ability to create clean, modern, testable, well-documented code.</li>
+                    <li>Critical thinking and ability to solve complex problems.</li>
+                    <li>Ability to learn and develop modern technologies and skills</li>
+                    <li>Should have excellent problem-solving abilities</li>
+                    <li>Should have a basic understanding of using Jira or any other project management software</li>
+                    <li>Experience writing unit tests and integration tests for frontend and backend applications.</li>
+                </ul>
+                <p><strong>Other Skills:</strong></p>
+                <ul>
+                    <li>Communication skills</li>
+                    <li>Ability to communicate in English</li>
+                    <li>Problem-solving skills</li>
+                    <li>Ability to adapt to different working environments</li>
+                    <li>Attention to detail</li>
+                    <li>Open to having fun always :)</li>
+                </ul>
+                <p><strong>Important</strong></p>
+                <p>An updated and working GitHub profile along with the links to your portfolio website or any other projects that you have deployed should be included in the CV.</p>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!--################################################ Footer ############################################################-->
+
+    <footer class="footer-class">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="Images/logoRemovebg.png" alt="Company Logo">
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>
+                        Home
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/products.html">Product</a></li>
+                            <li><a href="https://kenilworthinternational.com/">Growth</a></li>
+                        </ul>
+                    </li>
+                    <li>Products and Services
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://services.kenilworthinternational.com">Secure Cards</a></li>
+                            <li><a href="https://solutions.kenilworthinternational.com">Software Solution</a></li>
+                            <li><a href="http://agro.kenilworthinernational.com">Digitalized Agro Tech Solution</a></li>
+                            <li><a href="https://drones.kenilworthinternational.com">UAV, Drones & Jammers</a></li>
+                        </ul>
+                    </li>
+                    <li>Company
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/about-us.html">About Us</a></li>
+                        </ul>
+                    </li>
+                    <li>Contact Us
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/contact-us.html">REACH US</a></li>
+                        </ul>
+                    </li>
+                    <li>CAREERS
+                        <ul class="footer-sub-menu">
+                            <li><a href="https://kenilworthinternational.com/careers.html">Careers</a></li>
+                            <li><a href="https://kenilworthinternational.com/careers.html">Internships</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/KenilworthInternationalLanka" target="_blank"><img
+                    src="Images/facebook-icon.png" class="social-logo-image" alt="Facebook"></a>
+            <a href="https://www.youtube.com/@KenilworthInternational" target="_blank"><img src="Images/yt.png"
+                    class="social-logo-image" alt="Twitter"></a>
+            <a href="https://twitter.com/kenilworth_int" target="_blank"><img src="Images/twitter-icon.png"
+                    class="social-logo-image" alt="Twitter"></a>
+            <a href="https://www.instagram.com/kenilworth_international" target="_blank"><img src="Images/insta.png"
+                    class="social-logo-image" alt="Twitter"></a>
+
+            <a href="https://www.linkedin.com/company/kenilworth-international/" target="_blank"><img
+                    src="Images/linkedin-icon.png" class="social-logo-image" alt="LinkedIn"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.kenilworth.croplapmc&pcampaignid=web_share"
+                target="_blank"><img src="Images/playstore-ncms.png" class="social-logo-image" alt="NCMS"></a>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KENILWORTH International. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+
+    <script>
+                document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.dropbtn').forEach(function (dropdownButton) {
+                dropdownButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    this.nextElementSibling.classList.toggle('show');
+                });
+            });
+
+            // Close the dropdown menu if the user clicks outside of it
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function (dropdownContent) {
+                        if (dropdownContent.classList.contains('show')) {
+                            dropdownContent.classList.remove('show');
+                        }
+                    });
+                }
+            });
+        });
+
+        const body = document.querySelector("body");
+        const nav = document.querySelector("nav");
+        const sidebarOpen = document.querySelector(".sidebarOpen");
+        const sidebarClose = document.querySelector(".sidebarClose");
+
+        sidebarOpen.addEventListener("click", () => {
+            nav.classList.add("active");
+        });
+
+        body.addEventListener("click", e => {
+            let clickedElm = e.target;
+            if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
+
+                nav.classList.remove("active");
+            }
+        });
+
+        const navBar = document.querySelector(".nav-bar");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 0) {
+                nav.classList.add('show'); // Add class to show navbar smoothly
+                navBar.classList.add("scrolled");
+            } else {
+                nav.classList.remove('show'); // Remove class to hide navbar smoothly
+                navBar.classList.remove("scrolled");
+            }
+        });
+
+
+        $(document).ready(function () {
+            $('#emailForm').submit(function (e) {
+                e.preventDefault(); // Prevent form submission
+
+                var formData = new FormData(this); // Create formData object
+
+                $.ajax({
+                    url: 'submit-service.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json', // Expect JSON response
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response.status === "success") {
+                            alert("Email sent successfully");
+                            closePopup();
+                        } else {
+                            // Display error message
+                            alert("Error: " + response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error occurred:', error);
+                        console.log('Server response:', xhr.responseText);
+                        // Display error message
+                        alert('An error occurred while submitting the form. Please try again later.');
+                    }
+                });
+            });
+        });
+
+
+
+
+        function openPopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.display = "block";
+            overlay.style.display = "block";
+            setTimeout(function () {
+                popup.style.opacity = 1;
+                overlay.style.opacity = 1;
+            }, 10);
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.opacity = 0;
+            overlay.style.opacity = 0;
+            setTimeout(function () {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            }, 300);
+        }
+
+
+
+
+
+
+        function selectOption(option) {
+            console.log("Option " + option + " selected");
+        }
+
+        function performAction(button) {
+            console.log("Button " + button + " clicked");
+            closePopup();
+        }
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+       
+        function scrollToProductContainer() {
+            document.getElementById('position-head').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function popupCV(position) {
+            document.getElementById('position').value = position;
+            document.getElementById('popupCV').style.display = 'block';
+        }
+
+        function closePopupCV() {
+            document.getElementById('popupCV').style.display = 'none';
+            resetForm();
+        }
+
+        function closeSuccessPopup() {
+            document.getElementById('successPopup').style.display = 'none';
+            document.getElementById('popupCV').style.display = 'none';
+            resetForm();
+        }
+
+        function closeErrorPopup() {
+            document.getElementById('errorPopup').style.display = 'none';
+            resetForm();
+        }
+        function resetForm() {
+            document.getElementById('emailForm').reset();
+            grecaptcha.reset();
+        }
+        // Handle form submission
+        document.getElementById('emailForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+
+            // Show loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+
+            fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading spinner
+                    document.getElementById('loadingSpinner').style.display = 'none';
+
+                    if (data.status === 'success') {
+                        document.getElementById('successMessage').textContent = data.message;
+                        document.getElementById('successPopup').style.display = 'block';
+                        resetForm();
+
+                    } else {
+                        document.getElementById('errorMessage').textContent = data.message;
+                        document.getElementById('errorPopup').style.display = 'block';
+                        resetForm();
+                    }
+                })
+                .catch(error => {
+                    // Hide loading spinner
+                    document.getElementById('loadingSpinner').style.display = 'none';
+
+                    document.getElementById('errorMessage').textContent = 'An error occurred while sending the email.';
+                    document.getElementById('errorPopup').style.display = 'block';
+                    resetForm();
+                });
+        });
+
+
+        </script>
+</body>
+
+</html>

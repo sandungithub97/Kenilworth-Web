@@ -1,0 +1,574 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+@keyframes color {
+  0% {
+    background: #00063b;
+  }
+
+  20% {
+    background: #0c0038;
+  }
+
+  50% {
+    background: #003b4b;
+  }
+
+  80% {
+    background: #0c0038;
+  }
+
+  100% {
+    background: #00063b;
+  }
+}
+
+.main {
+  position: relative;
+  padding: 60px 30px;
+  width: 100%;
+}
+
+.main h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.main .content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 768px;
+}
+
+.main .content p {
+  line-height: 1.8;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row;
+  align-items: center;
+}
+
+.sub-list {
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.main-list {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.menuToggle {
+  text-align: left;
+  position: fixed;
+  /* Change to fixed */
+  top: 20px;
+  /* Adjust top position as needed */
+  left: 20px;
+  /* Adjust left or right position as needed */
+  z-index: 1;
+  /* Ensure it stays on top */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.menuToggle a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+.menuToggle a:hover {
+  color: #ff970f;
+}
+
+.rightbar {
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: row;
+  /* Keep items in a row */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: space-between;
+  /* Space items across the width */
+  position: fixed;
+  height: 70px;
+  width: 100vw;
+  background: rgb(83, 0, 0);
+  /* Fallback color if animation is not supported */
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  backdrop-filter: blur(10px);
+  /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  animation: color 10s infinite;
+  /* Apply the color animation */
+  padding: 0 20px;
+  /* Add padding for spacing */
+}
+
+.logo-image {
+  margin-left: 150px;
+  flex-grow: 1;
+  /* Allow this element to grow */
+  display: flex;
+  /* Use flexbox to center the image */
+  align-items: center;
+  /* Center image vertically */
+  justify-content: center;
+  /* Center image horizontally */
+  height: 100%;
+  /* Ensure the container fills the rightbar */
+}
+
+.image-logo-top {
+  height: 100%;
+  /* Set the image height to fill the parent container */
+  width: auto;
+  /* Maintain aspect ratio */
+  border: none;
+  /* Remove any border */
+  display: block;
+  /* Removes bottom gap under images */
+}
+
+.reach-us-forum {
+  margin-right: 10px;
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Center button vertically */
+  justify-content: flex-end;
+  /* Align button to the right */
+  height: 100%;
+  /* Ensure the container fills the rightbar */
+}
+
+.menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+.menuToggle span {
+  position: relative;
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+.menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+.menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+
+.menuToggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menuToggle input:checked~span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.menuToggle input:checked~.menuItem {
+  transform: none;
+}
+
+.menuItem {
+  position: fixed;
+  /* Change to fixed */
+  top: 70px;
+  /* Adjust according to the design, this will place it below the menu toggle */
+  left: 20px;
+  /* Same as the menuToggle for alignment */
+  width: 600px;
+  padding: 50px;
+  padding-top: 125px;
+  background: rgb(83, 0, 0);
+  /* Fallback color if animation is not supported */
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  backdrop-filter: blur(10px);
+  /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  animation: color 10s infinite;
+  /* Apply the color animation */
+}
+
+.menuItem li {
+  color: #ecfcff;
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.menuItem li:hover {
+  padding: 12px;
+  background-color: #ffffff;
+  color: #ff970f;
+}
+
+.menuItem li.selected {
+  font-weight: bolder;
+  padding-left: 20px;
+  background-color: #ff970f;
+  color: white;
+}
+
+.menu--left {
+  z-index: 99999999;
+  position: relative;
+  width: 50%;
+  background-color: transparent;
+}
+
+.menu--left .menuToggle {
+  left: 0;
+}
+
+.menu--left .menuToggle input {
+  left: 50px;
+}
+
+.menu--left .menuToggle span {
+  left: 50px;
+}
+
+.menu--left .menuItem {
+  left: 50px;
+  margin: -100px 0 0 -50px;
+  transform: translate(-100%, 0);
+}
+
+.menu--right .menuToggle {
+  position: fixed;
+  right: 0;
+}
+
+.menu--right .menuToggle input {
+  right: 50px;
+}
+
+.menu--right .menuToggle span {
+  right: 50px;
+}
+
+.menu--right .menuItem {
+  right: 0;
+  margin: -100px 0 0 0;
+  transform: translate(100%, 0);
+}
+
+.menu--right .menuItem li a:hover {
+  padding-left: 5px;
+}
+
+.menu--bottom--right .menuToggle {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.menu--bottom--right .menuToggle input {
+  right: 50px;
+  bottom: 50px;
+  top: auto;
+}
+
+.menu--bottom--right .menuToggle input:checked~.menuItem {
+  transform: scale(1);
+}
+
+.menu--bottom--right .menuToggle input:checked~.menuItem li:nth-child(1) {
+  -webkit-animation: text-slide-in 0.2s;
+  -moz-animation: text-slide-in 0.2s;
+  animation: text-slide-in 0.2s;
+}
+
+.menu--bottom--right .menuToggle input:checked~.menuItem li:nth-child(2) {
+  -webkit-animation: text-slide-in 0.3s;
+  -moz-animation: text-slide-in 0.3s;
+  animation: text-slide-in 0.3s;
+}
+
+.menu--bottom--right .menuToggle input:checked~.menuItem li:nth-child(3) {
+  -webkit-animation: text-slide-in 0.4s;
+  -moz-animation: text-slide-in 0.4s;
+  animation: text-slide-in 0.4s;
+}
+
+.menu--bottom--right .menuToggle input:checked~.menuItem li:nth-child(4) {
+  -webkit-animation: text-slide-in 0.5s;
+  -moz-animation: text-slide-in 0.5s;
+  animation: text-slide-in 0.5s;
+}
+
+.menu--bottom--right .menuToggle input:checked~.menuItem li:nth-child(5) {
+  -webkit-animation: text-slide-in 0.6s;
+  -moz-animation: text-slide-in 0.6s;
+  animation: text-slide-in 0.6s;
+}
+
+.menu--bottom--right .menuToggle span {
+  right: 50px;
+  bottom: 50px;
+  top: auto;
+}
+
+.menu--bottom--right .menuItem {
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 125px;
+  transform-origin: bottom right;
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+}
+
+.menu--bottom--right .menuItem li {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.menu--bottom--right .menuItem li a:hover {
+  padding-left: 5px;
+}
+
+.menu--bottom--left .menuToggle {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu--bottom--left .menuToggle input {
+  left: 50px;
+  bottom: 50px;
+  top: auto;
+}
+
+.menu--bottom--left .menuToggle input:checked~.menuItem {
+  transform: scale(1);
+}
+
+.menu--bottom--left .menuToggle input:checked~.menuItem li:nth-child(1) {
+  -webkit-animation: text-slide-in 0.2s;
+  -moz-animation: text-slide-in 0.2s;
+  animation: text-slide-in 0.2s;
+}
+
+.menu--bottom--left .menuToggle input:checked~.menuItem li:nth-child(2) {
+  -webkit-animation: text-slide-in 0.3s;
+  -moz-animation: text-slide-in 0.3s;
+  animation: text-slide-in 0.3s;
+}
+
+.menu--bottom--left .menuToggle input:checked~.menuItem li:nth-child(3) {
+  -webkit-animation: text-slide-in 0.4s;
+  -moz-animation: text-slide-in 0.4s;
+  animation: text-slide-in 0.4s;
+}
+
+.menu--bottom--left .menuToggle input:checked~.menuItem li:nth-child(4) {
+  -webkit-animation: text-slide-in 0.5s;
+  -moz-animation: text-slide-in 0.5s;
+  animation: text-slide-in 0.5s;
+}
+
+.menu--bottom--left .menuToggle input:checked~.menuItem li:nth-child(5) {
+  -webkit-animation: text-slide-in 0.6s;
+  -moz-animation: text-slide-in 0.6s;
+  animation: text-slide-in 0.6s;
+}
+
+.menu--bottom--left .menuToggle span {
+  left: 50px;
+  bottom: 50px;
+  top: auto;
+}
+
+.menu--bottom--left .menuItem {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 125px;
+  transform-origin: bottom left;
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
+  -moz-transition: -moz-transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+}
+
+.menu--bottom--left .menuItem li {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.menu--bottom--left .menuItem li a:hover {
+  padding-left: 5px;
+}
+
+@keyframes text-slide-in {
+  0% {
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reach-us-forum button {
+  background-color: #ff970f;
+}
+
+.reach-us-forum button:hover {
+  background-color: #1d7a00;
+}
+
+@media (max-width: 600px) {
+  .logo-image {
+    display: none;
+    /* Hide the logo image */
+  }
+
+  .reach-us-forum {
+    margin-left: auto;
+    /* Push the button to the right */
+    margin-right: 20px;
+    /* Add some margin to the right */
+    align-items: center;
+    /* Center button vertically */
+    justify-content: flex-end;
+    /* Align button to the right */
+    width: 100%;
+    /* Ensure the button container takes full width */
+  }
+
+  .rightbar {
+    justify-content: flex-end;
+    /* Align items to the right */
+    padding: 0 10px;
+    /* Reduce padding */
+  }
+
+
+  .menuItem {
+    position: fixed;
+    /* Change to fixed */
+    top: 40px;
+    /* Adjust according to the design, this will place it below the menu toggle */
+    left: 20px;
+    /* Same as the menuToggle for alignment */
+    width: 300px;
+    padding: 20px;
+    padding-top: 125px;
+    background: rgb(83, 0, 0);
+    /* Fallback color if animation is not supported */
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    backdrop-filter: blur(10px);
+    /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    animation: color 10s infinite;
+    /* Apply the color animation */
+  }
+
+  .menuItem li {
+    color: #ecfcff;
+    padding: 8px 0;
+    font-size: 15px;
+  }
+
+  .menuItem li:hover {
+    padding: 8px;
+    background-color: #ffffff;
+    color: #ff970f;
+  }
+
+  .menuItem li.selected {
+    font-weight: bolder;
+    padding-left: 20px;
+    background-color: #ff970f;
+    color: white;
+  }
+
+  .rightbar {
+    height: 50px;
+    width: 100vw;
+  }
+
+  .menuToggle input {
+    width: 20px;
+    height: 22px;
+  }
+
+  .menuToggle span {
+    width: 30px;
+    height: 3px;
+  }
+  .reach-us-forum button {
+    scale: 0.8;
+  }
+}
