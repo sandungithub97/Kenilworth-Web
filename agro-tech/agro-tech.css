@@ -1,0 +1,95 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+}
+
+:root {
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+.agro-head {
+    text-transform: uppercase;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+}
+body {
+    width: 100vw;
+}
+
+.space-area {
+    height: 60px;
+}
+
+.banner {
+    height: 100vh;
+    width: 100vw;
+}
+
+.playstore {
+    margin-top: 40px;
+    top: 70vh;
+    cursor: pointer;
+    width: 300px;
+    cursor: pointer;
+}
+
+.ncms-link {
+    text-decoration: none;
+    color: rgb(0, 255, 255);
+}
+
+.drone-pilot{
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+.drone-pilot-background2{
+
+    scale: 0.2;
+}
+.drone-pilot1{
+    margin: auto 0;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.drone-pilot2{
+    color: white;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+}
+
+
+@media (max-width: 600px) {
+    .playstore {
+        margin-top: 40px;
+        top: 70vh;
+        cursor: pointer;
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .backstyle{
+        scale: 0.3 !important;
+    }
+}
